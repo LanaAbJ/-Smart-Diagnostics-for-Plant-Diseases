@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Disease Prediction</title>
+</head>
+<body>
+    <h1>Upload an image for disease diagnosis</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <input type="submit" value="Predict Disease">
+    </form>
+    {% if cnn_prediction %}
+        <h2>{{ cnn_prediction }}</h2>
+    {% endif %}
+    {% if densenet_prediction %}
+        <h2>{{ densenet_prediction }}</h2>
+    {% endif %}
+</body>
+</html>

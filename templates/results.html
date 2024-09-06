@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <style>
+        #info {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <h2>CNN Prediction: {{ cnn_prediction }}</h2>
+    <button onclick="toggleInfo()">Toggle Information</button>
+    <div id="info">
+        <p><strong>Information:</strong> {{ cnn_info }}</p>
+        <p><strong>Treatment:</strong> {{ cnn_treatment }}</p>
+    </div>
+
+    <h2>DenseNet Prediction: {{ dn_prediction }}</h2>
+
+    <a href="/">Try another image</a>
+
+    <script>
+        function toggleInfo() {
+            var infoDiv = document.getElementById('info');
+            if (infoDiv.style.display === 'none') {
+                infoDiv.style.display = 'block';
+            } else {
+                infoDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
